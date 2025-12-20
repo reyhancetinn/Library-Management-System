@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeni Kitap Ekle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            /* Arka Plan (Gerçekçi Kütüphane) */
+            background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Quicksand', sans-serif;
+            color: #5d4037;
+        }
+
+        /* Buzlu Cam Kutusu */
+        .glass-card {
+            background: rgba(255, 245, 248, 0.90);
+            backdrop-filter: blur(8px);
+            border-radius: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            max-width: 500px; /* Form olduğu için biraz daha dar */
+            margin: 60px auto;
+        }
+
+        h2 {
+            font-family: 'Pacifico', cursive;
+            color: #1b5e20; /* Mint yeşili uyumlu koyu ton */
+            text-shadow: 2px 2px 0px #fff;
+            margin-bottom: 30px;
+        }
+
+        /* Form Elemanları */
+        .form-label {
+            font-weight: bold;
+            color: #ad1457;
+            margin-left: 10px;
+        }
+
+        .form-control {
+            border-radius: 25px; /* Yuvarlak kutular */
+            border: 2px solid #b9f6ca; /* Mint yeşili kenarlık */
+            background-color: #f1f8e9;
+            padding: 12px 20px;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            background-color: #fff;
+            border-color: #69f0ae;
+            box-shadow: 0 0 0 0.25rem rgba(185, 246, 202, 0.5);
+        }
+
+        /* Butonlar */
+        .btn-save {
+            background-color: #b9f6ca;
+            color: #1b5e20;
+            border-radius: 50px;
+            padding: 12px;
+            width: 100%;
+            font-weight: bold;
+            border: none;
+            transition: 0.2s;
+        }
+
+        .btn-save:hover {
+            background-color: #69f0ae;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(27, 94, 32, 0.2);
+        }
+
+        .btn-back {
+            background-color: transparent;
+            color: #888;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            padding: 10px;
+            width: 100%;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+
+        .btn-back:hover {
+            background-color: #fff;
+            color: #555;
+            border-color: #bbb;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="glass-card">
+            <h2 class="text-center">✨ Yeni Kitap Ekle ✨</h2>
+            
+            <form method="POST">
+                
+                <label class="form-label">📖 Kitap Adı:</label>
+                <input type="text" name="name" class="form-control" placeholder="Örn: Küçük Prens" required>
+                
+                <label class="form-label">✍️ Yazar:</label>
+                <input type="text" name="author" class="form-control" placeholder="Örn: Antoine de Saint-Exupéry" required>
+                
+                <label class="form-label">📅 Yayın Yılı:</label>
+                <input type="number" name="year" class="form-control" placeholder="Örn: 1943" required>
+                
+                <br>
+                <button type="submit" class="btn btn-save">Kaydet 💖</button>
+            </form>
+            
+            <a href="/" class="btn btn-back">🏠 Vazgeç / Ana Menü</a>
+        </div>
+    </div>
+
+</body>
+</html>

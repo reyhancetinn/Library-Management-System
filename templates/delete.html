@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitap Sil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            /* Arka Plan (Gerçekçi Kütüphane) */
+            background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Quicksand', sans-serif;
+            color: #5d4037;
+        }
+
+        /* Buzlu Cam Kutusu */
+        .glass-card {
+            background: rgba(255, 245, 248, 0.90);
+            backdrop-filter: blur(8px);
+            border-radius: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            max-width: 500px;
+            margin: 60px auto;
+        }
+
+        h2 {
+            font-family: 'Pacifico', cursive;
+            color: #bf360c; /* Şeftali/Turuncu uyumlu koyu ton */
+            text-shadow: 2px 2px 0px #fff;
+            margin-bottom: 30px;
+        }
+
+        /* Form Elemanları */
+        .form-label {
+            font-weight: bold;
+            color: #d84315;
+            margin-left: 10px;
+        }
+
+        .form-control {
+            border-radius: 25px;
+            border: 2px solid #ffccbc; /* Şeftali rengi kenarlık */
+            background-color: #fff3e0;
+            padding: 12px 20px;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            background-color: #fff;
+            border-color: #ffab91;
+            box-shadow: 0 0 0 0.25rem rgba(255, 204, 188, 0.5);
+        }
+
+        /* Butonlar */
+        .btn-delete {
+            background-color: #ffccbc; /* Şeftali Rengi Buton */
+            color: #bf360c;
+            border-radius: 50px;
+            padding: 12px;
+            width: 100%;
+            font-weight: bold;
+            border: none;
+            transition: 0.2s;
+        }
+
+        .btn-delete:hover {
+            background-color: #ffab91;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(191, 54, 12, 0.2);
+            color: #fff;
+        }
+
+        .btn-back {
+            background-color: transparent;
+            color: #888;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            padding: 10px;
+            width: 100%;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+
+        .btn-back:hover {
+            background-color: #fff;
+            color: #555;
+            border-color: #bbb;
+        }
+        
+        /* Uyarı Mesajı Kutusu */
+        .alert-custom {
+            background-color: #ffe0b2;
+            color: #e65100;
+            border-radius: 20px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ffcc80;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="glass-card text-center">
+            <h2>🗑️ Kitap Sil</h2>
+            
+            {% if message %}
+                <div class="alert-custom">
+                    {{ message }}
+                </div>
+            {% endif %}
+
+            <p style="color: #6d4c41;">Silmek istediğin kitabın adını aşağıya yazabilirsin.</p>
+            
+            <form method="POST" class="text-start">
+                <label class="form-label">📖 Silinecek Kitabın Adı:</label>
+                <input type="text" name="name" class="form-control" placeholder="Kitap adını buraya yaz..." required>
+                
+                <br>
+                <button type="submit" class="btn btn-delete">Kitabı Sil 💔</button>
+            </form>
+            
+            <a href="/" class="btn btn-back">🏠 Vazgeç / Ana Menü</a>
+        </div>
+    </div>
+
+</body>
+</html>
